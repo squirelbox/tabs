@@ -2,9 +2,7 @@ class Tabs {
     constructor(links, body, body_item, active_class) {
         this.id = links
         this.active_class = active_class ? active_class : false
-          console.log(this.id)
         this.tabs = document.querySelector('#' + this.id).querySelectorAll('a')
-        console.log(this.tabs)
         this.blocks = document.querySelector(body).querySelectorAll(body_item)
         this.init()
         this.listener()
@@ -12,6 +10,7 @@ class Tabs {
 
     init() {
         this.tabs.forEach((el, i) => {
+            if(i>this.blocks.length-1) el.remove()
             el.dataset.tab = this.id + '_' + i
             if (this.active_class)
                 if (i === 0) el.classList.add(this.active_class)
