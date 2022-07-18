@@ -1,4 +1,4 @@
-# tabs
+# html tabs
 
 Download all files and run index.html for testing tabs
 
